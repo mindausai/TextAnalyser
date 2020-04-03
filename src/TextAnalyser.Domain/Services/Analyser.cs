@@ -13,7 +13,8 @@ namespace TextAnalyser.Domain.Services
 
 		public int CalculateWords(string text)
 		{
-			throw new NotImplementedException();
+			char[] delimiters = new char[] { ' ', '\r', '\n' };
+			return text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length;
 		}
 	}
 }
