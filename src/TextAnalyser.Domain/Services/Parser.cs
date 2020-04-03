@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using TextAnalyser.Domain.Models;
+using TextAnalyser.Domain.Validations;
 
 namespace TextAnalyser.Domain.Services
 {
@@ -20,22 +22,25 @@ namespace TextAnalyser.Domain.Services
 
 		public ValidationResult ValidatePath(string filePath)
 		{
-			if (File.Exists(filePath) || Path.GetExtension(filePath) == ".txt" )
+			var validationChecks = new List<IPathValidation>()
 			{
-				return new ValidationResult()
-				{
-					Success = true,
-					Message = "Success"
-				};
+				new ExistingPathValidation(),
+				new FileExtensionValidation()
+			};
+
+
+			var validationResults = validationChecks.Select(v => v.Validate(filePath));
+
+
+			if (validationResults.Any(v => !v.Success))
+			{
+				return validationResults.FirstOrDefault(v => !v.Success);
 			}
 			else
 			{
-				return new ValidationResult()
-				{
-					Success = false,
-					Message = "Path is incorrect"
-				};
+				return new ValidationResult() { Success = true };
 			}
+				
 		}
 	}
 }
