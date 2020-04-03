@@ -24,5 +24,15 @@ namespace TextAnalyser.Domain.Tests
 
 			validationResult.Success.Should().BeTrue();
 		}
+
+		[Test]
+		public void ValidateFilePath_GivenValidFolderPath_ValidateIsNotSuccessfull()
+		{
+			var fileUrl = File.ReadAllText(TestContext.CurrentContext.TestDirectory + "\\Data");
+
+			var validationResult = _parser.ValidatePath(fileUrl);
+
+			validationResult.Success.Should().BeFalse();
+		}
 	}
 }

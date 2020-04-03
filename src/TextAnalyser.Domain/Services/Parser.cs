@@ -20,7 +20,22 @@ namespace TextAnalyser.Domain.Services
 
 		public ValidationResult ValidatePath(string filePath)
 		{
-			throw new NotImplementedException();
+			if (File.Exists(filePath) || Path.GetExtension(filePath) == ".txt" )
+			{
+				return new ValidationResult()
+				{
+					Success = false,
+					Message = "Path is incorrect"
+				};
+			}
+			else
+			{
+				return new ValidationResult()
+				{
+					Success = true,
+					Message = "Success"
+				};
+			}
 		}
 	}
 }
