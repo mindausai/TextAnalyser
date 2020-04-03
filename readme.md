@@ -1,0 +1,1 @@
+Write a C# console application which reads a text file as input and prints total character and English word counts as output.
