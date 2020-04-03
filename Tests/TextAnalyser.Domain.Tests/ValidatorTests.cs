@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace TextAnalyser.Domain.Tests
 {
-	public class Tests
+	public class ValidatorTests
 	{
 		[SetUp]
 		public void Setup()
