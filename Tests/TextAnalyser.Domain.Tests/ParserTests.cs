@@ -45,5 +45,15 @@ namespace TextAnalyser.Domain.Tests
 
 			validationResult.Success.Should().BeFalse();
 		}
+
+		[Test]
+		public void GetText_GivenTestData_ReturnsFileText()
+		{
+			var fileUrl = TestContext.CurrentContext.TestDirectory + @"\Data\test.data";
+
+			var text = _parser.GetText(fileUrl);
+
+			text.Should().Be("test");
+		}
 	}
 }
