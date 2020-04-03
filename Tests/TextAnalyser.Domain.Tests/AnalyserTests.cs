@@ -18,7 +18,7 @@ namespace TextAnalyser.Domain.Tests
 		}
 
 		[Test]
-		public void CalculateWords_GivenTextWithSingleWord_GetSingleWord()
+		public void CalculateWords_GivenTextWith1Word_Get1Word()
 		{
 			var text = "Hello";
 
@@ -36,6 +36,16 @@ namespace TextAnalyser.Domain.Tests
 			var wordCount = _analyser.CalculateWords(text);
 
 			wordCount.Should().Be(7);
+		}
+
+		[Test]
+		public void CalculateCharacters_GivenTextWith1Word_Gets5Chars()
+		{
+			var text = "Hello";
+
+			var wordCount = _analyser.CalculateCharacters(text);
+
+			wordCount.Should().Be(5);
 		}
 	}
 }
