@@ -26,5 +26,16 @@ namespace TextAnalyser.Domain.Tests
 
 			wordCount.Should().Be(1);
 		}
+
+		[Test]
+		public void CalculateWords_GivenTextWith7Words_CalculatesCorrectly()
+		{
+			var text = "Hello" +
+				" Everyone. This is a new sentence! ";
+
+			var wordCount = _analyser.CalculateWords(text);
+
+			wordCount.Should().Be(7);
+		}
 	}
 }
