@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
@@ -19,7 +20,9 @@ namespace TextAnalyser.Domain.Tests
 		{
 			var fileUrl = File.ReadAllText(TestContext.CurrentContext.TestDirectory + "\\Data\\test.txt");
 
-			var validationResult = 
+			var validationResult = _parser.ValidatePath(fileUrl);
+
+			validationResult.Success.Should().BeTrue();
 		}
 	}
 }

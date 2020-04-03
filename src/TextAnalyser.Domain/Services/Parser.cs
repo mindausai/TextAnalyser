@@ -18,7 +18,7 @@ namespace TextAnalyser.Domain.Services
 			throw new NotImplementedException();
 		}
 
-		public ValidationResult ValidatePath()
+		public ValidationResult ValidatePath(string filePath)
 		{
 			throw new NotImplementedException();
 		}
