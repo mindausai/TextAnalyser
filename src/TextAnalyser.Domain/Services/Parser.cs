@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using TextAnalyser.Domain.Models;
 
 namespace TextAnalyser.Domain.Services
 {
 	public class Parser
 	{
-		private readonly Validator _validator;
-		public Parser(Validator validator)
+		
+		public Parser()
 		{
-			_validator = validator;
+			
 		}
 		public string GetText(string fileUrl)
+		{
+			throw new NotImplementedException();
+		}
+
+		public ValidationResult ValidatePath()
 		{
 			throw new NotImplementedException();
 		}
