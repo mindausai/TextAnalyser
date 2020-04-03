@@ -23,6 +23,7 @@ namespace TextAnalyser.Domain.Tests
 			var validationResult = _parser.ValidatePath(fileUrl);
 
 			validationResult.Success.Should().BeTrue();
+			
 		}
 
 		[Test]
@@ -33,6 +34,7 @@ namespace TextAnalyser.Domain.Tests
 			var validationResult = _parser.ValidatePath(fileUrl);
 
 			validationResult.Success.Should().BeFalse();
+			validationResult.Message.Should().Be("Path does not exist");
 		}
 
 
@@ -44,12 +46,13 @@ namespace TextAnalyser.Domain.Tests
 			var validationResult = _parser.ValidatePath(fileUrl);
 
 			validationResult.Success.Should().BeFalse();
+			validationResult.Message.Should().Be("Incorrect file extension");
 		}
 
 		[Test]
 		public void GetText_GivenTestData_ReturnsFileText()
 		{
-			var fileUrl = TestContext.CurrentContext.TestDirectory + @"\Data\test.data";
+			var fileUrl = TestContext.CurrentContext.TestDirectory + @"\Data\test.txt";
 
 			var text = _parser.GetText(fileUrl);
 

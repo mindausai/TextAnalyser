@@ -17,7 +17,15 @@ namespace TextAnalyser.Domain.Services
 		}
 		public string GetText(string fileUrl)
 		{
-			throw new NotImplementedException();
+			var validationResult = ValidatePath(fileUrl);
+			if (validationResult.Success)
+			{
+				return File.ReadAllText(fileUrl);
+			}
+			else
+			{
+				return validationResult.Message;
+			}
 		}
 
 		public ValidationResult ValidatePath(string filePath)
