@@ -24,16 +24,16 @@ namespace TextAnalyser.Domain.Services
 			{
 				return new ValidationResult()
 				{
-					Success = false,
-					Message = "Path is incorrect"
+					Success = true,
+					Message = "Success"
 				};
 			}
 			else
 			{
 				return new ValidationResult()
 				{
-					Success = true,
-					Message = "Success"
+					Success = false,
+					Message = "Path is incorrect"
 				};
 			}
 		}

@@ -18,7 +18,7 @@ namespace TextAnalyser.Domain.Tests
 		[Test]
 		public void ValidateFilePath_GivenValidFilePath_DetectThatFileExists()
 		{
-			var fileUrl = File.ReadAllText(TestContext.CurrentContext.TestDirectory + "\\Data\\test.txt");
+			var fileUrl = TestContext.CurrentContext.TestDirectory + "\\Data\\test.txt";
 
 			var validationResult = _parser.ValidatePath(fileUrl);
 
@@ -28,7 +28,7 @@ namespace TextAnalyser.Domain.Tests
 		[Test]
 		public void ValidateFilePath_GivenValidFolderPath_ValidateIsNotSuccessfull()
 		{
-			var fileUrl = File.ReadAllText(TestContext.CurrentContext.TestDirectory + "\\Data");
+			var fileUrl = TestContext.CurrentContext.TestDirectory + "\\Data";
 
 			var validationResult = _parser.ValidatePath(fileUrl);
 
