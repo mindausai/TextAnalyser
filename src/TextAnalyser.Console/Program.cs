@@ -18,6 +18,8 @@ namespace TextAnalyser.ConsoleApp
 			var analysisService = _serviceProvider.GetService<AnalysisService>();
 
 			Console.WriteLine(analysisService.GetWordCount(args));
+
+			Console.WriteLine(analysisService.GetCharacterCount(args));
 		}
 
 		private static void RegisterServices()
