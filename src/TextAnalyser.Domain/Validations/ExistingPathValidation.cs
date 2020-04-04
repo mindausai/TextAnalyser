@@ -20,7 +20,7 @@ namespace TextAnalyser.Domain.Validations
 				new ValidationResult()
 				{
 					Success = false,
-					Message = "Path does not exist"
+					Message = "File not found"
 				};
 		}
 	}

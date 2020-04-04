@@ -34,7 +34,7 @@ namespace TextAnalyser.Domain.Tests
 			var validationResult = _parser.ValidatePath(fileUrl);
 
 			validationResult.Success.Should().BeFalse();
-			validationResult.Message.Should().Be("Path does not exist");
+			validationResult.Message.Should().Be("File not found");
 		}
 
 

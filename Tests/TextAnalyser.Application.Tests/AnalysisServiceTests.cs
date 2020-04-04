@@ -22,5 +22,14 @@ namespace TextAnalyser.Application.Tests
 
 			result.Should().Be("Word count is: 1");
 		}
+
+		public void GetWordCount_GivenIncorrectPath_FileNotFound()
+		{
+			var filePath = TestContext.CurrentContext.TestDirectory + @"\Data\test.txt";
+
+			var result = _analysisService.GetWordCount(new string[1] { filePath });
+
+			result.Should().Be("Word count is: 1");
+		}
 	}
 }
