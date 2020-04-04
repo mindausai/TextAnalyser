@@ -25,7 +25,7 @@ namespace TextAnalyser.Application
 
 		public string GetCharacterCount(string[] args)
 		{
-			throw new NotImplementedException();
+			return new GetCharCount(_parser, _analyser).Do(args[0]);
 		}
 	}
 }
