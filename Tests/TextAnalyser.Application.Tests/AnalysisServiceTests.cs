@@ -32,5 +32,17 @@ namespace TextAnalyser.Application.Tests
 
 			result.Should().Be("File not found");
 		}
+
+		[Test]
+		public void GetCharacterCount_GivenFileWith1Word_Calculates4Chars()
+		{
+			var filePath = TestContext.CurrentContext.TestDirectory + @"\Data\test.txt";
+
+			var result = _analysisService.GetCharacterCount(new string[1] { filePath });
+
+			result.Should().Be("Character count is: 4");
+		}
+
+
 	}
 }

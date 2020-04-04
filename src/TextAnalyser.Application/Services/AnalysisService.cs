@@ -22,5 +22,10 @@ namespace TextAnalyser.Application
 		{
 			return new GetWordCount(_parser, _analyser).Do(args[0]);
 		}
+
+		public string GetCharacterCount(string[] args)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
