@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TextAnalyser.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\temp\\test.txt"
+    }
+  }
+}

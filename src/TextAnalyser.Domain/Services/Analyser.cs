@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TextAnalyser.Domain.Interfaces;
 
 namespace TextAnalyser.Domain.Services
 {
-	public class Analyser
+	public class Analyser : IAnalyser
 	{
 		public int CalculateCharacters(string text)
 		{
-			throw new NotImplementedException();
+			return text.Length;
 		}
 
 		public int CalculateWords(string text)

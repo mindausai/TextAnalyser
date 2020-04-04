@@ -47,5 +47,15 @@ namespace TextAnalyser.Domain.Tests
 
 			wordCount.Should().Be(5);
 		}
+
+		[Test]
+		public void CalculateCharacters_GivenTextWith2Word_Gets10Chars()
+		{
+			var text = "Hello you!";
+
+			var wordCount = _analyser.CalculateCharacters(text);
+
+			wordCount.Should().Be(10);
+		}
 	}
 }

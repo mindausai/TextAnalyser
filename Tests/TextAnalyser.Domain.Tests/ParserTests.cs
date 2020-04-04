@@ -59,14 +59,6 @@ namespace TextAnalyser.Domain.Tests
 			text.Should().Be("test");
 		}
 
-		[Test]
-		public void GetText_GivenNonExistingFile_ReturnsNotFound()
-		{
-			var fileUrl = TestContext.CurrentContext.TestDirectory + @"\Data\testNonExisting.txt";
-
-			var text = _parser.GetText(fileUrl);
-
-			text.Should().Be("Path does not exist");
-		}
+		
 	}
 }

@@ -3,29 +3,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using TextAnalyser.Domain.Interfaces;
 using TextAnalyser.Domain.Models;
 using TextAnalyser.Domain.Validations;
 
 namespace TextAnalyser.Domain.Services
 {
-	public class Parser
+	public class Parser : IParser
 	{
-		
+
 		public Parser()
 		{
-			
+
 		}
 		public string GetText(string fileUrl)
 		{
-			var validationResult = ValidatePath(fileUrl);
-			if (validationResult.Success)
-			{
-				return File.ReadAllText(fileUrl);
-			}
-			else
-			{
-				return validationResult.Message;
-			}
+			return File.ReadAllText(fileUrl);
 		}
 
 		public ValidationResult ValidatePath(string filePath)
@@ -35,7 +28,6 @@ namespace TextAnalyser.Domain.Services
 				new ExistingPathValidation(),
 				new FileExtensionValidation()
 			};
-
 
 			var validationResults = validationChecks.Select(v => v.Validate(filePath));
 
@@ -48,7 +40,7 @@ namespace TextAnalyser.Domain.Services
 			{
 				return new ValidationResult() { Success = true };
 			}
-				
+
 		}
 	}
 }

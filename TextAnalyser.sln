@@ -7,11 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{07793AF0-527
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FD7CC01C-659C-45B6-972C-2217C55ABE71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalyser.Console", "src\TextAnalyser.Console\TextAnalyser.Console.csproj", "{EE4B3884-4CB4-4EB5-8BE5-A9C11F30684D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAnalyser.Console", "src\TextAnalyser.Console\TextAnalyser.Console.csproj", "{EE4B3884-4CB4-4EB5-8BE5-A9C11F30684D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalyser.Domain", "src\TextAnalyser.Domain\TextAnalyser.Domain.csproj", "{DD308A0F-620C-41C6-A766-F7D00134B647}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAnalyser.Domain", "src\TextAnalyser.Domain\TextAnalyser.Domain.csproj", "{DD308A0F-620C-41C6-A766-F7D00134B647}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalyser.Domain.Tests", "Tests\TextAnalyser.Domain.Tests\TextAnalyser.Domain.Tests.csproj", "{DEC56490-B578-45B2-B105-7B5C3A872605}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAnalyser.Domain.Tests", "Tests\TextAnalyser.Domain.Tests\TextAnalyser.Domain.Tests.csproj", "{DEC56490-B578-45B2-B105-7B5C3A872605}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalyser.Application", "src\TextAnalyser.Application\TextAnalyser.Application.csproj", "{CE1EC532-A539-4346-9DEB-D002E72C1E45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{DEC56490-B578-45B2-B105-7B5C3A872605}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEC56490-B578-45B2-B105-7B5C3A872605}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEC56490-B578-45B2-B105-7B5C3A872605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE1EC532-A539-4346-9DEB-D002E72C1E45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1EC532-A539-4346-9DEB-D002E72C1E45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1EC532-A539-4346-9DEB-D002E72C1E45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1EC532-A539-4346-9DEB-D002E72C1E45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{EE4B3884-4CB4-4EB5-8BE5-A9C11F30684D} = {07793AF0-5272-430C-B733-91FF29A80C70}
 		{DD308A0F-620C-41C6-A766-F7D00134B647} = {07793AF0-5272-430C-B733-91FF29A80C70}
 		{DEC56490-B578-45B2-B105-7B5C3A872605} = {FD7CC01C-659C-45B6-972C-2217C55ABE71}
+		{CE1EC532-A539-4346-9DEB-D002E72C1E45} = {07793AF0-5272-430C-B733-91FF29A80C70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0AE94E86-1DF5-43ED-A56F-E92C07FD3757}
