@@ -6,27 +6,18 @@ using TextAnalyser.Domain.Interfaces;
 
 namespace TextAnalyser.Application.Queries
 {
-	public class GetCharCount
+	public class GetCharCount : GetCount
 	{
-		private readonly IParser _parser;
 		private readonly IAnalyser _analyser;
 
-		public GetCharCount(IParser parser, IAnalyser analyser)
+		public GetCharCount(IParser parser, IAnalyser analyser) : base(parser)
 		{
-			_parser = parser;
 			_analyser = analyser;
 		}
 
-		public async Task<string> Do(string filePath)
+		public int override Calculate()
 		{
-			var validationResult = _parser.ValidatePath(filePath);
-			if (validationResult.Success)
-			{
-				var text = await _parser.GetText(filePath);
-				return $"Character count is: { _analyser.CalculateCharacters(text) }";
-			}
-
-			return validationResult.Message;
+			//_analyser.CalculateCharacters(text)
 		}
 	}
 }
