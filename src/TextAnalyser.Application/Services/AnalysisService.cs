@@ -20,8 +20,7 @@ namespace TextAnalyser.Application
 
 		public string GetWordCount(string[] args)
 		{
-			var response = new GetWordCount(_parser, _analyser).Do(args[0]);
-			return $"Word count is: {response }";
+			return new GetWordCount(_parser, _analyser).Do(args[0]);
 		}
 	}
 }

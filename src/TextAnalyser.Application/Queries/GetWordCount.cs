@@ -22,7 +22,7 @@ namespace TextAnalyser.Application.Queries
 			if (validationResult.Success)
 			{
 				var text = _parser.GetText(filePath);
-				return _analyser.CalculateWords(text).ToString();
+				return $"Word count is: { _analyser.CalculateWords(text) }";
 			}
 
 			return validationResult.Message;
