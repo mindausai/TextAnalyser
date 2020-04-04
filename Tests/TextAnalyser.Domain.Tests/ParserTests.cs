@@ -2,6 +2,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Threading.Tasks;
 using TextAnalyser.Domain.Services;
 
 namespace TextAnalyser.Domain.Tests
@@ -50,11 +51,11 @@ namespace TextAnalyser.Domain.Tests
 		}
 
 		[Test]
-		public void GetText_GivenTestData_ReturnsFileText()
+		public async Task GetText_GivenTestData_ReturnsFileText()
 		{
 			var fileUrl = TestContext.CurrentContext.TestDirectory + @"\Data\test.txt";
 
-			var text = _parser.GetText(fileUrl);
+			var text = await _parser.GetText(fileUrl);
 
 			text.Should().Be("test");
 		}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using TextAnalyser.Application.Queries;
 using TextAnalyser.Domain.Interfaces;
 using TextAnalyser.Domain.Services;
@@ -18,14 +19,14 @@ namespace TextAnalyser.Application
 			_analyser = analyser;
 		}
 
-		public string GetWordCount(string[] args)
+		public async Task<string> GetWordCount(string[] args)
 		{
-			return new GetWordCount(_parser, _analyser).Do(args[0]);
+			return await new GetWordCount(_parser, _analyser).Do(args[0]);
 		}
 
-		public string GetCharacterCount(string[] args)
+		public async Task<string> GetCharacterCount(string[] args)
 		{
-			return new GetCharCount(_parser, _analyser).Do(args[0]);
+			return await new GetCharCount(_parser, _analyser).Do(args[0]);
 		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using TextAnalyser.Domain.Interfaces;
 
 namespace TextAnalyser.Application.Queries
@@ -16,12 +17,12 @@ namespace TextAnalyser.Application.Queries
 			_analyser = analyser;
 		}
 
-		public string Do(string filePath)
+		public async Task<string> Do(string filePath)
 		{
 			var validationResult = _parser.ValidatePath(filePath);
 			if (validationResult.Success)
 			{
-				var text = _parser.GetText(filePath);
+				var text = await _parser.GetText(filePath);
 				return $"Character count is: { _analyser.CalculateCharacters(text) }";
 			}
 

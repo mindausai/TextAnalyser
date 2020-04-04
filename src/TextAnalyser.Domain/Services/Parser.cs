@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using TextAnalyser.Domain.Interfaces;
 using TextAnalyser.Domain.Models;
 using TextAnalyser.Domain.Validations;
@@ -16,9 +17,13 @@ namespace TextAnalyser.Domain.Services
 		{
 
 		}
-		public string GetText(string fileUrl)
+		public async Task<string> GetText(string fileUrl)
 		{
-			return File.ReadAllText(fileUrl);
+			using (var reader = File.OpenText(fileUrl))
+			{
+				return await reader.ReadToEndAsync();
+
+			}
 		}
 
 		public ValidationResult ValidatePath(string filePath)
