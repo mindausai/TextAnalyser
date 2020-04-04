@@ -9,12 +9,10 @@ namespace TextAnalyser.Application.Queries
 	public abstract class GetCount
 	{
 		private readonly IParser _parser;
-		private readonly IAnalyser _analyser;
 
-		public GetCharCount(IParser parser, IAnalyser analyser)
+		public GetCharCount(IParser parser)
 		{
 			_parser = parser;
-			_analyser = analyser;
 		}
 
 		public async Task<string> Do(string filePath)
